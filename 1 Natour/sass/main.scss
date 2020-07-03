@@ -55,7 +55,7 @@ body {
     height: 3.5rem;
 }
 
-
+// กล่องตรงกลาง
 .header__text-box{
     position :absolute;
     top : 40%;
@@ -135,7 +135,7 @@ body {
         transform: translate(0);
     }
 }
-
+//ปุ่ม
 .btn:link,
 .btn:visited {
     text-transform: uppercase;
@@ -189,4 +189,5 @@ body {
     animation: moveInBottom .5s ease-out .75s ;
     animation-fill-mode: backwards;
 }
+/* end Section3 */
 /* end Section4 */
