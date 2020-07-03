@@ -11,7 +11,7 @@
 
     [class^="col-"]{
         background-color: orangered;
-        height: 6rem; //เอาออกทีหลัง
+        
         float: left;
         &:not(:last-child){
             margin-right: $gutter-horizontal;
