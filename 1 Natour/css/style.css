@@ -210,7 +210,7 @@ body {
   display: inline-block;
   position: absolute;
   left: 0;
-  top: 0; }
+  top: -0.4rem; }
   .form__radio-button::after {
     content: "";
     display: block;
@@ -221,7 +221,12 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #55c57a; }
+    background-color: #55c57a;
+    opacity: 0;
+    transition: opacity .2s; }
+
+.form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+  opacity: 1; }
 
 .btn:link, .btn:visited {
   text-transform: uppercase;
