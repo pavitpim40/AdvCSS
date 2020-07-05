@@ -27,7 +27,10 @@
         right: 6.5rem;
         background-image: radial-gradient($color-primary-light, $color-primary-dark);
         z-index: 1000; //ใช้ได้กับ element ที่มีการ define position
-        transition: transform 0.8s ;
+        transition: transform 0.8s  cubic-bezier(0.83, 0, 0.17, 1);
+        // ref1 easings.net ดูลักษะณะ timing
+        // ref2 cubic-bezier.com สำหรับสร้างเอง
+
 
         //transform: scale(80);
     }
@@ -43,7 +46,7 @@
         //ทำให้ list หายไปเป็น default
         opacity: 0;
         width: 0;
-        transition: all  0.8s;  
+        transition: all  0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6);  
 
     }
 
