@@ -14,6 +14,7 @@
         //border: 1px solid;
         border-radius: 50%;
         z-index: 2000;
+        box-shadow: 0 1rem 3rem rgba($color-black, 0.1);
 
     }
 
@@ -26,8 +27,9 @@
         right: 6.5rem;
         background-image: radial-gradient($color-primary-light, $color-primary-dark);
         z-index: 1000; //ใช้ได้กับ element ที่มีการ define position
+        transition: transform 0.8s ;
 
-        transform: scale(80);
+        //transform: scale(80);
     }
 
     &__nav {
@@ -35,8 +37,13 @@
         width: 100%;
         position: fixed;
         top:0;
-        right: 0;
+        left: 0; //วิ่งเข้าจากซ้ายตอนanimated
         z-index: 1500;//หลังปุ่มขาว หน้าปุ่มเขียว
+
+        //ทำให้ list หายไปเป็น default
+        opacity: 0;
+        width: 0;
+        transition: all  0.8s;  
 
     }
 
@@ -44,6 +51,7 @@
        @include absolute_center;
        list-style: none;
        text-align: center;
+       width: 100%; //ทำให้สอดคล้องกับการ animated width
     }
 
     &__item{
@@ -66,7 +74,7 @@
 
             span {
                 margin-right: 1.5rem;
-                display: inline-block;
+                display: inline-block; //test
             }
 
         }
@@ -77,5 +85,14 @@
             color : $color-primary;
             transform: translateX(1rem); //ทำเป็น inline block ก่อนด้วย
         }
+    }
+
+    //CHECKBOX HACK
+    &__checkbox:checked ~ &__background {
+        transform: scale(80);
+    }
+    &__checkbox:checked ~ &__nav {
+        opacity: 1;
+        width: 100%;
     }
 }
