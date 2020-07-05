@@ -1,7 +1,7 @@
 .navigation {
 
     &__checkbox {
-
+        display: none;
     }
 
     &__button {
@@ -26,14 +26,24 @@
         right: 6.5rem;
         background-image: radial-gradient($color-primary-light, $color-primary-dark);
         z-index: 1000; //ใช้ได้กับ element ที่มีการ define position
+
+        transform: scale(80);
     }
 
     &__nav {
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top:0;
+        right: 0;
+        z-index: 1500;//หลังปุ่มขาว หน้าปุ่มเขียว
 
     }
 
     &__list {
-
+       @include absolute_center;
+       list-style: none;
+       text-align: center;
     }
 
     &__item{
